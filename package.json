@@ -1,0 +1,20 @@
+{
+  "name": "generator-react-component",
+  "version": "0.1.0",
+  "description": "Create minimal react component skeleton",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "react",
+    "component"
+  ],
+  "author": "Fadehelix <fadehelix@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.6.1",
+    "yeoman-generator": "^1.1.1"
+  }
+}
