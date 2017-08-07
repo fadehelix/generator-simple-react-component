@@ -1,5 +1,5 @@
 {
-  "name": "generator-react-component",
+  "name": "generator-simple-react-component",
   "version": "0.1.0",
   "description": "Create minimal react component skeleton",
   "scripts": {
@@ -10,11 +10,16 @@
     "react",
     "component"
   ],
-  "author": "Fadehelix <fadehelix@gmail.com>",
+  "author": "Fadehelix <fadehelix@gmail.com> (http://fadehelix.github.io)",
   "license": "MIT",
   "dependencies": {
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
     "yeoman-generator": "^1.1.1"
+  },
+  "main": "generators/app/index.js",
+  "repository" : { 
+    "type" : "git",
+    "url" : "https://github.com/fadehelix/generator-simple-react-component.git"
   }
 }
