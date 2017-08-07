@@ -54,7 +54,9 @@
           ]
         }
       ],
-      "import/no-extraneous-dependencies": ["warn"],
+      "import/no-extraneous-dependencies": [
+        "warn"
+      ],
       "react/forbid-component-props": [
         "error",
         {
