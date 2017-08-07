@@ -1,3 +1,4 @@
+/* eslint-env jest, mocha */
 import React from 'react';
 import renderer from 'react-test-renderer';
 import MyClassComponent from './MyClassComponent.jsx';

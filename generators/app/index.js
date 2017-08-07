@@ -1,11 +1,8 @@
-var Generator = require('yeoman-generator'),
-    rename = require('gulp-rename'),
-    replace = require('gulp-replace');
+const Generator = require('yeoman-generator');
+const rename = require('gulp-rename');
+const replace = require('gulp-replace');
 
 module.exports = class extends Generator {
-  constructor(args, opts) {
-    super(args, opts);
-  }
 
   prompting() {
     return this.prompt([{
@@ -26,23 +23,23 @@ module.exports = class extends Generator {
   }
 
   writing() {
-    var that = this;
-    //Default component template
-    var template = 'MyFunctionalComponent';
+    const that = this;
+    // Default component template
+    let template = 'MyFunctionalComponent';
     if (this.answers.type === 'Class') {
       template = 'MyClassComponent';
     }
-    var replacement = new RegExp(template,"g");
-    
-    this.registerTransformStream(rename(function (path) {
-        path.basename = path.basename.replace(replacement, that.answers.name)
-      }));
+    const replacement = new RegExp(template, 'g');
 
-      this.registerTransformStream(replace(template, that.answers.name));
+    this.registerTransformStream(rename(path => {
+      path.basename = path.basename.replace(replacement, that.answers.name);
+    }));
 
-      this.fs.copy(
+    this.registerTransformStream(replace(template, that.answers.name));
+
+    this.fs.copy(
         this.templatePath(template + '/'),
         this.destinationPath(this.answers.name)
-      )
+      );
   }
-}
+};

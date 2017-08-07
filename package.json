@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Create minimal react component skeleton",
   "scripts": {
-    "test": "test"
+    "test": "xo"
   },
   "keywords": [
     "yeoman-generator",
@@ -18,8 +18,52 @@
     "yeoman-generator": "^1.1.1"
   },
   "main": "generators/app/index.js",
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/fadehelix/generator-simple-react-component.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fadehelix/generator-simple-react-component.git"
+  },
+  "devDependencies": {
+    "eslint-config-xo": "^0.18.2",
+    "eslint-config-xo-react": "^0.13.0",
+    "eslint-plugin-react": "^7.1.0",
+    "xo": "^0.18.2"
+  },
+  "xo": {
+    "extends": [
+      "xo",
+      "xo-react"
+    ],
+    "env": {
+      "jest": true,
+      "mocha": true
+    },
+    "space": true,
+    "esnext": true,
+    "rules": {
+      "unicorn/filename-case": [
+        "warn",
+        {
+          "case": "pascalCase"
+        }
+      ],
+      "import/no-unassigned-import": [
+        "error",
+        {
+          "allow": [
+            "**/*.css"
+          ]
+        }
+      ],
+      "import/no-extraneous-dependencies": ["warn"],
+      "react/forbid-component-props": [
+        "error",
+        {
+          "forbid": [
+            "className",
+            "style"
+          ]
+        }
+      ]
+    }
   }
 }
