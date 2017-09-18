@@ -19,3 +19,6 @@ __Important!__ The generator assumes that you run it in directory where you stor
 $ cd /your/react/app
 $ yo simple-react-component
 ```
+
+## Notes
+If you want to use the generator in react native project then` you have to change an extension of generated `.jsx` files to `.js` because the [packager doesn't support .jsx files](https://github.com/facebook/react-native/issues/2303).
