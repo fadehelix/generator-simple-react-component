@@ -23,6 +23,12 @@ describe('Functional component', () => {
   it('function has given name', () => {
     assert.fileContent(path.join(__dirname, `tmp/${componentName}/${componentName}.jsx`), `const ${componentName}`);
   });
+  it('index imports component', () => {
+    assert.fileContent(path.join(__dirname, `tmp/${componentName}/index.js`), `import ${componentName}`);
+  });
+  it('index exports component', () => {
+    assert.fileContent(path.join(__dirname, `tmp/${componentName}/index.js`), `export default ${componentName}`);
+  })
 });
 
 describe('Class component', () => {
@@ -44,4 +50,10 @@ describe('Class component', () => {
   it('function has given name', () => {
     assert.fileContent(path.join(__dirname, `tmp/${componentName}/${componentName}.jsx`), `class ${componentName}`);
   });
+  it('index imports component', () => {
+    assert.fileContent(path.join(__dirname, `tmp/${componentName}/index.js`), `import ${componentName}`);
+  });
+  it('index exports component', () => {
+    assert.fileContent(path.join(__dirname, `tmp/${componentName}/index.js`), `export default ${componentName}`);
+  })
 });
